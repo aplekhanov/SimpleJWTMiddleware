@@ -12,7 +12,7 @@ public final class SimpleJWTMiddleware: Middleware {
         
         #if DEBUG
         if request.headers.bearerAuthorization?.token == "TEST_TOKEN" {
-            request.payload = Payload(id: UUID(uuidString: "6c7c3a5e-c04f-11ea-b3de-0242ac130004"), email: "test@account.com")
+            request.payload = Payload(id: UUID(uuidString: "6c7c3a5e-c04f-11ea-b3de-0242ac130004")!, email: "test@account.com")
             return next.respond(to: request)
         }
         #endif
